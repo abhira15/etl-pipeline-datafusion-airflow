@@ -62,7 +62,7 @@ Install the required Python packages.
 
 - Access the Airflow UI at `http://localhost:8080` and ensure the DAGs are loaded correctly.
 
-![Airflow UI](images/airflow_ui.png)
+![Airflow UI](https://github.com/abhira15/etl-pipeline-datafusion-airflow/blob/main/Employeedata/Image/Composer.png)
 
 ### 5. Set Up Google Cloud Data Fusion
 
@@ -70,7 +70,7 @@ Install the required Python packages.
 - Upload the pipeline configurations from the `/datafusion_pipelines` directory to Data Fusion.
 - Ensure that the service account used by Airflow has the necessary permissions to trigger Data Fusion pipelines.
 
-![Google Cloud Data Fusion](images/datafusion_pipeline.png)
+![Google Cloud Data Fusion](https://github.com/abhira15/etl-pipeline-datafusion-airflow/blob/main/Employeedata/Image/Data_Fusion_ETL_Pipeline.png)
 
 ### 6. Configure Connections in Airflow
 
@@ -83,7 +83,7 @@ Install the required Python packages.
 - In the Airflow UI, enable and trigger the DAG responsible for the ETL process.
 - Monitor the DAG's progress and logs to ensure successful execution.
 
-![Airflow DAG Execution](images/airflow_dag_execution.png)
+![Airflow DAG Execution](https://github.com/abhira15/etl-pipeline-datafusion-airflow/blob/main/Employeedata/Image/Pipeline.png)
 
 ## Data Flow Overview
 
