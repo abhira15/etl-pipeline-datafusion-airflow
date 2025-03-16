@@ -8,6 +8,7 @@ This project demonstrates an ETL (Extract, Transform, Load) pipeline for process
 - **/datafusion_pipelines**: Includes Data Fusion pipeline configurations defining the data processing steps.
 - **/scripts**: Holds custom scripts used within the pipeline for data transformation or other tasks.
 - **/resources**: Contains auxiliary files such as sample data, configuration files, or schemas.
+- **/images**: Contains project-related images for documentation purposes.
 
 ## Prerequisites
 
@@ -20,77 +21,83 @@ Before setting up this project, ensure you have the following:
 
 ## Setup Instructions
 
-1. **Clone the Repository**:
+### 1. Clone the Repository
 
-   ```bash
+```bash
    git clone https://github.com/abhira15/etl-pipeline-datafusion-airflow.git
    cd etl-pipeline-datafusion-airflow/Employeedata
-   ```
+```
 
-2. **Set Up Virtual Environment**:
+### 2. Set Up Virtual Environment
 
-   Create and activate a Python virtual environment to manage dependencies.
+Create and activate a Python virtual environment to manage dependencies.
 
-   ```bash
+```bash
    python3 -m venv venv
    source venv/bin/activate
-   ```
+```
 
-3. **Install Dependencies**:
+### 3. Install Dependencies
 
-   Install the required Python packages.
+Install the required Python packages.
 
-   ```bash
+```bash
    pip install -r requirements.txt
-   ```
+```
 
-4. **Configure Airflow**:
+### 4. Configure Airflow
 
-   - Initialize the Airflow database:
+- Initialize the Airflow database:
 
-     ```bash
-     airflow db init
-     ```
+  ```bash
+  airflow db init
+  ```
 
-   - Start the Airflow web server and scheduler:
+- Start the Airflow web server and scheduler:
 
-     ```bash
-     airflow webserver --port 8080
-     airflow scheduler
-     ```
+  ```bash
+  airflow webserver --port 8080
+  airflow scheduler
+  ```
 
-   - Access the Airflow UI at `http://localhost:8080` and ensure the DAGs are loaded correctly.
+- Access the Airflow UI at `http://localhost:8080` and ensure the DAGs are loaded correctly.
 
-5. **Set Up Google Cloud Data Fusion**:
+![Airflow UI](images/airflow_ui.png)
 
-   - Create a Data Fusion instance in your GCP project.
-   - Upload the pipeline configurations from the `/datafusion_pipelines` directory to Data Fusion.
-   - Ensure that the service account used by Airflow has the necessary permissions to trigger Data Fusion pipelines.
+### 5. Set Up Google Cloud Data Fusion
 
-6. **Configure Connections in Airflow**:
+- Create a Data Fusion instance in your GCP project.
+- Upload the pipeline configurations from the `/datafusion_pipelines` directory to Data Fusion.
+- Ensure that the service account used by Airflow has the necessary permissions to trigger Data Fusion pipelines.
 
-   - In the Airflow UI, navigate to **Admin > Connections**.
-   - Set up a connection for Google Cloud with the service account key.
-   - Configure any other connections required by your pipelines (e.g., databases, APIs).
+![Google Cloud Data Fusion](images/datafusion_pipeline.png)
 
-7. **Trigger the ETL Pipeline**:
+### 6. Configure Connections in Airflow
 
-   - In the Airflow UI, enable and trigger the DAG responsible for the ETL process.
-   - Monitor the DAG's progress and logs to ensure successful execution.
+- In the Airflow UI, navigate to **Admin > Connections**.
+- Set up a connection for Google Cloud with the service account key.
+- Configure any other connections required by your pipelines (e.g., databases, APIs).
+
+### 7. Trigger the ETL Pipeline
+
+- In the Airflow UI, enable and trigger the DAG responsible for the ETL process.
+- Monitor the DAG's progress and logs to ensure successful execution.
+
+![Airflow DAG Execution](images/airflow_dag_execution.png)
 
 ## Data Flow Overview
 
-1. **Extraction**:
+### 1. Extraction
 
-   - The pipeline extracts employee data from the source system, which could be a database, CSV file, or API.
+- The pipeline extracts employee data from the source system, which could be a database, CSV file, or API.
 
-2. **Transformation**:
+### 2. Transformation
 
-   - Data Fusion processes the extracted data, performing transformations such as data cleaning, normalization, and enrichment.
+- Data Fusion processes the extracted data, performing transformations such as data cleaning, normalization, and enrichment.
 
-3. **Loading**:
+### 3. Loading
 
-   - The transformed data is loaded into the destination system, such as a data warehouse or analytics platform, for further use.
+- The transformed data is loaded into the destination system, such as a data warehouse or analytics platform, for further use.
 
 ## Customization
 
@@ -111,14 +118,7 @@ To adapt this project to your specific needs:
 - [Google Cloud Data Fusion Documentation](https://cloud.google.com/data-fusion/docs)
 - [Apache Airflow Documentation](https://airflow.apache.org/docs/)
 
-## Contributing
-
-Contributions are welcome! Please fork the repository and submit a pull request with your changes.
-
-## License
-
-This project is licensed under the MIT License. See the [LICENSE](../LICENSE) file for details.
-
 ---
 
-*Note: This README provides a general framework for setting up an ETL pipeline using Google Cloud Data Fusion and Apache Airflow. Specific details may vary based on your environment and requirements.* 
+*Note: This README provides a general framework for setting up an ETL pipeline using Google Cloud Data Fusion and Apache Airflow. Specific details may vary based on your environment and requirements.*
+
